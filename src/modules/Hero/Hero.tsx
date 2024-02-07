@@ -1,13 +1,24 @@
+'use client';
 import { Container, Section } from '@/components';
 import balloonsLeft from './img/pink-balloons-left.png';
 import balloonsRight from './img/pink-balloons-right.png';
 import React from 'react';
 import { Balloons } from './components';
+import useWindowSize from 'react-use/lib/useWindowSize';
+import Confetti from 'react-confetti';
 
 const Hero = () => {
+  const { width, height } = useWindowSize();
+
   return (
     <Section className="pt-[0] overflow-hidden" id="hero">
       <Container className="flex items-center justify-center min-h-screen">
+        <Confetti
+          width={width}
+          height={height}
+          colors={['#FFA5F4']}
+          numberOfPieces={70}
+        />
         <div className="flex relative items-center justify-center max-w-[295px] md:max-w-[470px] xl:max-w-[650px]">
           <h1 className="font-anzeigen uppercase text-center text-accent text-[40px] font-medium -tracking-[1%] leading-[32px] md:text-[64px] md:leading-[51px] xl:text-[88px] xl:leading-[90%]">
             Tworzymy unikalne i niepowtarzalne
@@ -17,7 +28,7 @@ const Hero = () => {
           <Balloons
             img={balloonsLeft}
             alt="pink balloons one"
-            className="w-[155px] h-[158px]  -top-[130px] -left-[90px] md:w-[272px] md:h-[278px] md:-top-[110px] md:-left-[250px] xl:w-[398px] xl:h-[404px] xl:-top-[110px] xl:-left-[330px] xl:-rotate-[25deg]"
+            className="w-[155px] h-[165px]  -top-[130px] -left-[90px] md:w-[272px] md:h-[285px] md:-top-[110px] md:-left-[250px] xl:w-[398px] xl:h-[415px] xl:-top-[110px] xl:-left-[330px] xl:-rotate-[25deg]"
           />
           <Balloons
             img={balloonsRight}

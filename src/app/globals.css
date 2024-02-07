@@ -65,7 +65,7 @@ select {
 
 @font-face {
   font-family: 'Anzeigen';
-  src: url('../assets/fonts/Anzeigen\ Grotesk\ T\ Regular.otf')
+  src: url('../assets/fonts/Anzeigen\ Grotesk\ T\ Regular.ttf')
     format('truetype');
   font-weight: 500;
   font-style: normal;

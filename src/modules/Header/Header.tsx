@@ -34,9 +34,9 @@ const Header = () => {
     <>
       <header className="container flex z-[9999] justify-between fixed top-0 left-1/2 mx-auto px-5 pt-[30px] md:px-[30px] xl:px-[112px] xl:pt-[40px] -translate-x-1/2">
         <div
-          className={
+          className={`${
             isScrolling ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }
+          } transition-all`}
         >
           <Logo />
         </div>
@@ -48,7 +48,7 @@ const Header = () => {
           <span
             className={`font-anzeigen uppercase text-[24px] leading-[90%] font-medium ${
               isScrolling ? 'block' : 'hidden'
-            }`}
+            } `}
           >
             menu
           </span>
