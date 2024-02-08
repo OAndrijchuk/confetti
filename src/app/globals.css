@@ -76,35 +76,3 @@ select {
   font-weight: 500;
   font-style: normal;
 }
-
-.swiper-wrapper {
-  margin-bottom: 36px;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-@media screen and (min-width: 768px) {
-  .swiper-wrapper {
-    margin-bottom: 48px;
-  }
-}
-
-.swiper-slide {
-  height: 100%;
-}
-
-.swiper-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-pagination-bullet {
-  width: 8px !important;
-  height: 8px !important;
-  margin: 0 4px !important;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #222222 !important;
-}
