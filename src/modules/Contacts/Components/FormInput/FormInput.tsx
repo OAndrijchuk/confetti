@@ -47,7 +47,7 @@ export default function FormInput({
           id={id}
           value={formik.values.id}
           placeholder={placeholder}
-          className={`w-full outline-none  px-6 py-5 border-solid bg-transparent  ${className} ${
+          className={`w-full outline-none  px-6 py-5 border-solid bg-transparent font-inter text-[18px] -tracking-[0.18px] font-medium md:text-[20px] md:leading-[24px] md:tracking-[0.2px]  ${className} ${
             borderColor === 'border-accent' ? 'text-accent' : ''
           }`}
         />

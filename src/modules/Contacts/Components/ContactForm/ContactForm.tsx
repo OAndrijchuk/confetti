@@ -68,15 +68,11 @@ const ContactForm = () => {
         img={balloonsLeft}
         alt="pink balloons one"
         className="hidden w-[412px] h-[419px] -rotate-[30deg] -top-[90px] -left-[110px] md:block"
-        //  md:-top-[110px] md:-left-[250px] md:w-[272px] md:h-[285px]
-        //  xl:h-[415px] xl:-top-[110px] xl:-left-[330px] xl:-rotate-[25deg] xl:w-[398px]
       />
       <Balloons
         img={balloonsRight}
         alt="pink balloons two"
         className="hidden w-[344px] h-[350px] bottom-[95px] -right-[100px] md:block"
-        //  md:-bottom-[250px] md:-right-[200px]
-        // xl:w-[460px] xl:h-[468px] xl:-bottom-[250px] xl:-right-[335px]
       />
     </div>
   );
