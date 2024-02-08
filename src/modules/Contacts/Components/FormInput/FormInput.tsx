@@ -33,13 +33,13 @@ export default function FormInput({
   return (
     <div className="relative h-auto flex flex-col w-full gap-2 tra">
       <label
-        htmlFor={label}
-        className="ml-6 font-inter text-[16px] -tracking-[0.16px] font-medium"
+        htmlFor={id}
+        className="ml-6 font-inter text-[16px] -tracking-[0.16px] leading-[19px] font-medium"
       >
         {label}
       </label>
       <div
-        className={`flex gap-2 p-[1.5px] ${borderColor} rounded-[9px] border-[1px] bg-white font-inter text-[16px] -tracking-[0.16px] font-medium`}
+        className={`flex gap-2 p-[1.5px] ${borderColor} rounded-[9px] border-[1px] bg-white font-inter text-[18px] -tracking-[0.18px] font-medium md:text-[20px] md:leading-[24px] md:tracking-[0.2px]`}
       >
         <input
           onChange={formik.handleChange}

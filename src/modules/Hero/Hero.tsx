@@ -1,9 +1,8 @@
 'use client';
-import { Container, Section } from '@/components';
-import balloonsLeft from './img/pink-balloons-left.png';
-import balloonsRight from './img/pink-balloons-right.png';
+import { Balloons, Container, Section } from '@/components';
+import balloonsLeft from '../../assets/img/pink-balloons-left.png';
+import balloonsRight from '../../assets/img/pink-balloons-right.png';
 import React from 'react';
-import { Balloons } from './components';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
 

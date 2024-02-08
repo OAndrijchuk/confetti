@@ -11,7 +11,7 @@ const Balloons = ({ img, alt, className }: Props) => {
   return (
     <div className={`absolute -z-[1] ${className}`}>
       <div className="rounded-ful absolute w-full h-full bg-[#fcf0df] blur-[300px]"></div>
-      <Image className="absolute w-full h-full" src={img} alt={alt} />
+      <Image className="absolute w-full" src={img} alt={alt} />
     </div>
   );
 };
