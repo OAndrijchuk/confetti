@@ -2,19 +2,33 @@
 import { Balloons, Container, Section } from '@/components';
 import balloonsLeft from '../../assets/img/pink-balloons-left.png';
 import balloonsRight from '../../assets/img/pink-balloons-right.png';
-import React from 'react';
-import useWindowSize from 'react-use/lib/useWindowSize';
+import React, { useEffect } from 'react';
+// import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
 
 const Hero = () => {
-  const { width, height } = useWindowSize();
+  // const { width, height } = useWindowSize();
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
+  const resizeFunc = () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', resizeFunc);
+    return () => {
+      window.removeEventListener('resize', resizeFunc);
+    };
+  }, []);
 
   return (
     <Section className="pt-[0] overflow-hidden" id="hero">
       <Container className="flex items-center justify-center min-h-screen">
         <Confetti
-          width={width}
-          height={height}
+          width={Math.round(width)}
+          height={Math.round(height)}
           colors={['#FFA5F4']}
           numberOfPieces={70}
         />
