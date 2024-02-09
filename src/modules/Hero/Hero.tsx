@@ -1,37 +1,19 @@
-'use client';
 import { Balloons, Container, Section } from '@/components';
 import balloonsLeft from '../../assets/img/pink-balloons-left.png';
 import balloonsRight from '../../assets/img/pink-balloons-right.png';
-import React, { useEffect } from 'react';
-// import useWindowSize from 'react-use/lib/useWindowSize';
-import Confetti from 'react-confetti';
+import React from 'react';
+import dynamic from 'next/dynamic';
+
+const CustomConfetti = dynamic(
+  () => import('./components/CustomConfetti/CustomConfetti'),
+  { ssr: false }
+);
 
 const Hero = () => {
-  // const { width, height } = useWindowSize();
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-
-  const resizeFunc = () => {
-    width = window.innerWidth;
-    height = window.innerHeight;
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', resizeFunc);
-    return () => {
-      window.removeEventListener('resize', resizeFunc);
-    };
-  }, []);
-
   return (
     <Section className="pt-[0] overflow-hidden" id="hero">
       <Container className="flex items-center justify-center min-h-screen">
-        <Confetti
-          width={Math.round(width)}
-          height={Math.round(height)}
-          colors={['#FFA5F4']}
-          numberOfPieces={70}
-        />
+        <CustomConfetti />
         <div className="flex relative items-center justify-center max-w-[295px] md:max-w-[470px] xl:max-w-[650px]">
           <h1 className="font-anzeigen uppercase text-center text-accent text-[40px] font-medium -tracking-[1%] leading-[32px] md:text-[64px] md:leading-[51px] xl:text-[88px] xl:leading-[90%]">
             Tworzymy unikalne i niepowtarzalne
