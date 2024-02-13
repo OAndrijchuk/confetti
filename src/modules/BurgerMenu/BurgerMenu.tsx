@@ -18,6 +18,14 @@ type Props = {
 
 const BurgerMenu = ({ toggleMenu, isOpen }: Props) => {
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleEscape = (e: React.KeyboardEvent): void => {
       if (e.code === 'Escape') {
         toggleMenu();
@@ -51,7 +59,7 @@ const BurgerMenu = ({ toggleMenu, isOpen }: Props) => {
           <button
             type="button"
             onClick={toggleMenu}
-            className="w-6 h-6 text-main  transition-all hover:text-accent hover:scale-110"
+            className="w-6 h-6 text-main transition-all hover:text-accent hover:scale-110"
           >
             <SpriteSVG name="closeBtn" />
           </button>

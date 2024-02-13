@@ -17,7 +17,7 @@ export default function FormInput({
   inputType,
   id,
   formik,
-  className,
+  className = '',
   placeholder = '',
 }: Props) {
   const error = formik.touched[id] && formik.errors[id];

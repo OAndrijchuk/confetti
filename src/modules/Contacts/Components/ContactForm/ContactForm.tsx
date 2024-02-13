@@ -60,7 +60,10 @@ const ContactForm = () => {
             className="min-h-[136px] outline-none  px-6 py-5 border-solid border-[#808080] rounded-[9px] border-[1px] bg-white font-inter text-[18px] -tracking-[0.16px] font-medium resize-none  md:text-[20px] md:leading-[24px] md:tracking-[0.2px]"
           ></textarea>
         </div>
-        <button className="w-full bg-accent text-white uppercase px-8 py-6 rounded-3xl font-anzeigen text-[28px] font-medium -tracking-[0.28px] md:text-[40px] md:leading-[32px]">
+        <button
+          type="submit"
+          className="w-full bg-accent text-white uppercase px-8 py-6 rounded-3xl font-anzeigen text-[28px] font-medium -tracking-[0.28px] border-solid border-2 border-transparent hover:bg-extraAccent hover:border-extraText hover:text-extraText transition-colors md:text-[40px] md:leading-[32px]"
+        >
           Wyślij
         </button>
       </form>
