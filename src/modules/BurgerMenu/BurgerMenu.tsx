@@ -25,23 +25,23 @@ const BurgerMenu = ({ toggleMenu, isOpen }: Props) => {
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    const handleEscape = (e: React.KeyboardEvent): void => {
-      if (e.code === 'Escape') {
-        toggleMenu();
-      }
-    };
-    window.addEventListener(
-      'keydown',
-      handleEscape as unknown as EventListener
-    );
-    return () => {
-      window.removeEventListener(
-        'keydown',
-        handleEscape as unknown as EventListener
-      );
-    };
-  }, [isOpen, toggleMenu]);
+  // useEffect(() => {
+  //   const handleEscape = (e: React.KeyboardEvent): void => {
+  //     if (e.code === 'Escape') {
+  //       toggleMenu();
+  //     }
+  //   };
+  //   window.addEventListener(
+  //     'keydown',
+  //     handleEscape as unknown as EventListener
+  //   );
+  //   return () => {
+  //     window.removeEventListener(
+  //       'keydown',
+  //       handleEscape as unknown as EventListener
+  //     );
+  //   };
+  // }, [isOpen, toggleMenu]);
   return (
     <Section
       className={`fixed top-0 pt-[0] ${

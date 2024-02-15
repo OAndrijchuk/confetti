@@ -244,6 +244,34 @@ export const SpriteSVG = ({ name }: { name: string }) => {
         </svg>
       );
 
+    case 'plus':
+      return (
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+        >
+          <path
+            fill="none"
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
+            strokeMiterlimit="10"
+            strokeWidth="2.56"
+            stroke="currentColor"
+            d="M5.76 16h20.48"
+          ></path>
+          <path
+            fill="none"
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
+            strokeMiterlimit="10"
+            strokeWidth="2.56"
+            stroke="currentColor"
+            d="M16 5.76v20.48"
+          ></path>
+        </svg>
+      );
+
     default:
       return 'SVG not found';
   }

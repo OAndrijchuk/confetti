@@ -17,11 +17,11 @@ type Props = {
 };
 
 const Slider = ({ cardList, nextId = '', prevId = '' }: Props) => {
-  const swiper = useSwiper();
   return (
     <>
       <Swiper
         tag="div"
+        className="swiper-wrapper"
         modules={[Navigation, Pagination, A11y, Autoplay]}
         navigation={{ nextEl: nextId, prevEl: prevId }}
         pagination={{
@@ -43,13 +43,13 @@ const Slider = ({ cardList, nextId = '', prevId = '' }: Props) => {
           },
         }}
       >
-        <ul className="swiper-wrapper">
+        <div className="swiper-wrapper">
           {cardList.map((card, index) => (
-            <SwiperSlide tag="li" key={index} className="swiper-slide">
+            <SwiperSlide tag="div" key={index} className="swiper-slide">
               {card}
             </SwiperSlide>
           ))}
-        </ul>
+        </div>
       </Swiper>
     </>
   );

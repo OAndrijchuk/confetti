@@ -4,3 +4,4 @@ export { default as SectionTitle } from './SectionTitle/SectionTitle';
 export { default as Logo } from './Logo/Logo';
 export { default as Balloons } from './Balloons/Balloons';
 export { default as Slider } from './Slider/Slider';
+export { default as FormTextarea } from './FormTextarea/FormTextarea';

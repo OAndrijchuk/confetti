@@ -3,10 +3,18 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import FormInput from '../FormInput/FormInput';
-import { Balloons } from '@/components';
+import FormInput from '../../../../components/FormInput/FormInput';
+import { Balloons, FormTextarea } from '@/components';
 import balloonsLeft from '../../../../assets/img/pink-balloons-left.png';
 import balloonsRight from '../../../../assets/img/pink-balloons-right.png';
+import { toast } from 'react-toastify';
+import { setCustomerRequests } from '@/API/GeneralAPI';
+
+export type customerRequest = {
+  userName: string;
+  email: string;
+  message: string;
+};
 
 const ContactForm = () => {
   const formik = useFormik({
@@ -18,13 +26,15 @@ const ContactForm = () => {
     validationSchema: Yup.object().shape({
       userName: Yup.string()
         .min(2, 'Nieprawidłowe Іmię')
-        .required('Login is required'),
+        .required('Nieprawidłowe Іmię'),
       email: Yup.string()
         .email('Nieprawidłowy email')
-        .required('Email is required'),
+        .required('Nieprawidłowy email'),
     }),
-    onSubmit: async values => {
-      alert(JSON.stringify(values));
+    onSubmit: async (values: customerRequest, { resetForm }) => {
+      await setCustomerRequests(values);
+      resetForm();
+      toast.success('Prośba wysłana pomyślnie');
     },
   });
   return (
@@ -44,7 +54,7 @@ const ContactForm = () => {
           formik={formik}
           placeholder="mail@gmail.com"
         />
-        <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2">
           <label
             htmlFor="message"
             className="ml-6 font-inter text-[16px] -tracking-[0.16px] font-medium leading-[19px]"
@@ -59,7 +69,13 @@ const ContactForm = () => {
             placeholder="Twoja wiadomość..."
             className="min-h-[136px] outline-none  px-6 py-5 border-solid border-[#808080] rounded-[9px] border-[1px] bg-white font-inter text-[18px] -tracking-[0.16px] font-medium resize-none  md:text-[20px] md:leading-[24px] md:tracking-[0.2px]"
           ></textarea>
-        </div>
+        </div> */}
+        <FormTextarea
+          id={'message'}
+          label={'Wiadomość'}
+          formik={formik}
+          placeholder="Twoja wiadomość..."
+        />
         <button
           type="submit"
           className="w-full bg-accent text-white uppercase px-8 py-6 rounded-3xl font-anzeigen text-[28px] font-medium -tracking-[0.28px] border-solid border-2 border-transparent hover:bg-extraAccent hover:border-extraText hover:text-extraText transition-colors md:text-[40px] md:leading-[32px]"
